@@ -1,8 +1,8 @@
-0) Install java
+0) Install java /JDK
 sudo apt-get install default-jdk
 
-1) Install JDK
-sudo apt-get install default-jdk
+1) Install JRE
+sudo apt-get install default-jre
 
 2) Install htop
 sudo apt-get install htop
