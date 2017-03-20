@@ -132,39 +132,3 @@ implicit val stringIntMapEncoder: Encoder[Map[String, Any]] = ExpressionEncoder(
 
 // O comando row.getValuesMap[T] busca múltiplas colunas e uma vez só denro de um mapa de features Map[String, T]
 teenagersDF.map(teenager => teenager.getValuesMap[Any](List("name", "age"))).collect()
-
-
-
-
-
-
-//Especificação manual do Schema
-import org.apache.spark.sql.types._
-
-// Vamos criar um RDD
-val peopleRDD = spark.sparkContext.textFile("examples/src/main/resources/people.txt")
-
-// No caso o schema está com o encoding string
-val schemaString = "name age"
-
-// Vamos gerar um schema baseado na string do schema
-val fields = schemaString.split(" ")
-  .map(fieldName => StructField(fieldName, StringType, nullable = true))
-val schema = StructType(fields)
-
-// Vamos converter os registros do RDD para linhas
-val rowRDD = peopleRDD
-  .map(_.split(","))
-  .map(attributes => row(attributes(0), attributes(1).trim))
-
-// Vamos aplicar o schema para o RDD
-val peopleDF = spark.createDataFrame(rowRDD, schema)
-
-// Vamos criar uma view temporária usando Dataframe
-peopleDF.createOrReplaceTempView("people")
-
-// Nesse passo vamos executar uma consulta simples em uma view temporária usando Dataframes e armazenando na variável results
-val results = spark.sql("SELECT name FROM people")
-
-// As colunas da variável result pode ser acessada usando um índice
-results.map(attributes => "Name: " + attributes(0)).show()
