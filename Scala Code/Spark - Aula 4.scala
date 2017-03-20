@@ -155,7 +155,7 @@ val schema = StructType(fields)
 // Vamos converter os registros do RDD para linhas
 val rowRDD = peopleRDD
   .map(_.split(","))
-  .map(attributes => Row(attributes(0), attributes(1).trim))
+  .map(attributes => row(attributes(0), attributes(1).trim))
 
 // Vamos aplicar o schema para o RDD
 val peopleDF = spark.createDataFrame(rowRDD, schema)
