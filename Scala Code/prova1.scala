@@ -31,14 +31,14 @@ iam_EUA
 estadosunidos_EUA
 
 // 8) Crie uma funcao chamada func_equacao que realize a seguinte operacao: ((x + y) * w)/100
+
+// 9) Apos criar a funcao do exercicio 8, passe os seguintes parametros e informe quais sao os resultados
 // a) x = 1, y = 10, w = 1000
 
 // b) x = 10, y = 100, w = 10000
 
 // c) x = 100, y = 1000, w = 100000
 
-
-// 9) Apos criar a funcao do exercicio 8, passe os seguintes parametros e informe quais sao os resultados
 
 // 10) Crie uma variavel chamada "dados" atraves de um array com 15 elementos que serao 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30.
 
