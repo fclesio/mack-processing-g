@@ -2,7 +2,7 @@
 
 // 1) Realize a carga do script do filme que foi indicado para voce (INCEPTION) em um RDD chamado scriptRDD_NOMEFILME
 
-// 2) Realize a contagem do numero de objetos dentro do Dataframe
+// 2) Realize a contagem do numero de objetos dentro do RDD
 
 // 3) Faca a contagem de palavras relativa ao seu respectivo filme
 
