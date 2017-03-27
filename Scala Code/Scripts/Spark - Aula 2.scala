@@ -6,7 +6,7 @@
 var lines = sc.textFile("README.md")
 
 // Chamada da transformação filter()
-pythonLines = lines.filter(line => line.contains("Python"))
+val pythonLines = lines.filter(line => line.contains("Python"))
 
 // Chamada da Ação first()
 pythonLines.first()
