@@ -153,7 +153,10 @@ val result = sc.sequenceFile("/home/mortar/Desktop/seqoutput/part-00000", classO
 //Exibicao dos dados
 result.collect
 
+val ROOT_DIR = ("/home/mortar/Desktop/seqoutput/")
 
+//Exemplo load de arquivo textFile persistido
+val result = sc.textFile(ROOT_DIR + part-00000")
 
 
 
